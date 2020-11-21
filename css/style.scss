@@ -1,0 +1,89 @@
+$cBlack: black;
+$cWhite: white;
+$cBoarder: #444;
+$cSquare: #0ea14b;
+$cBlue: skyblue;
+
+header {
+  text-align: center;
+}
+
+#info ul {
+  list-style-type: none;
+  text-align: center;
+
+  & > li {
+    display: inline-block;
+    width: 300px;
+    vertical-align: top;
+  }
+}
+
+#turnPlate {
+  font-weight: 600;
+  margin: 0 0;
+  width: 150px;
+  border: 1px solid $cBlack;
+}
+
+#pass {
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  background-color: $cWhite;
+  color: $cBlack;
+  border: 1px solid $cBlack;
+  padding: 5px 40px;
+  margin: 5px 0;
+  font-weight: 600;
+  font-size: medium;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $cBlack;
+    color: $cWhite;
+  }
+}
+.row {
+  display: flex;
+  justify-content: center;
+}
+.square {
+  position: relative;
+  border: 1px solid $cBoarder;
+  width: 100px;
+  height: 100px;
+  background-color: $cSquare;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &.blackStone::before {
+    content: "";
+    position: absolute;
+    background-color: $cBlack;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+  }
+
+  &.whiteStone::before {
+    content: "";
+    position: absolute;
+    background-color: $cWhite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+  }
+
+  &:hover {
+    background-color: $cBlue;
+    color: $cWhite;
+  }
+}
